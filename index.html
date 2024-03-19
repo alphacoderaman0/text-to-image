@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to character Converter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-500 place-content-center grid h-screen">
+    <p class="text-center text-4xl mt-4 font-bold text-white font-serif mb-3">Text to Image Converter</p>
+    <div class="text-2xl w-86 h-auto bg-red-400 text-center rounded-2xl shadow-inner">
+        <div>
+            <label for="nameid" class=" text-3xl font-semibold text-blue-600 ">Enter Your Name</label><br>
+            <input type="text" id="nameid" class="shadow-xl rounded-xl text-center mt-2 text-indigo-600">
+        </div>
+        <div>
+            <img id="img" class=" bg-white w-48 h-48 m-auto mt-3 rounded-xl shadow-xl"
+                src="https://miro.medium.com/v2/resize:fit:1400/1*YMJDp-kqus7i-ktWtksNjg.jpeg" alt="no img">
+        </div>
+        <button class="bg-green-600 rounded-lg p-1 mt-4 mb-4 text-white hover:bg-green-800">Click Me</button>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                const name = $('#nameid').val();
+                if (name==""){
+                    $('#img').attr('src', `Screenshot 2024-03-19 145526.png`);
+                }
+                else{
+                    alert(name);
+                    $('#img').attr('src', `https://joesch.moe/api/v1/${name}`);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
